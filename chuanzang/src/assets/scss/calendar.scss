@@ -1,0 +1,171 @@
+.week-calendar {
+  // 样式初始化
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style: none;
+  }
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: #666;
+    text-decoration: none;
+  }
+  p {
+    margin: 0;
+  }
+  button,
+  input {
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  // 周历组件样式
+  #popup {
+    width: 100%;
+    height: 100%;
+    .content {
+      position: relative;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      .srv-time-selector{
+        height: 100%;
+        .bd{
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      .appointment{
+        color:#00cca3 !important;
+        display: block;
+        border-radius: rem(6px);
+      }
+      .calendarstyle {
+        height: auto;
+        max-height: 100%;
+        background: red;
+        width: 100%;
+        z-index: 100;
+        position: absolute;
+        bottom: 0;
+        overflow-y: auto; // 日历纵向滚动
+        overflow: hidden;
+      }
+      .shadow {
+        height: 100%;
+        width: 100%;
+        z-index: 99;
+        position: absolute;
+        top: 0px;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+      .srv-time-selector .bd {
+        .header-date {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          width: 100%;
+          background: #fff;
+          padding-left: rem(32px);
+          box-sizing: border-box;
+          .data-picker {
+            overflow-x: auto;
+            overflow-y: visible;
+            -webkit-box-flex: 1;
+            -moz-flex: 1;
+            flex: 1;
+            .wrapper {
+              display: flex;
+              align-items: center;
+              white-space: nowrap;
+              height: rem(200px);
+              button{
+                  position: relative;
+                  overflow: hidden;
+                  flex:0 0 rem(120px);
+                  height: rem(140px);
+                  text-align: center;
+                  padding: 0;
+                  border-radius: rem(8px);
+                  span{
+                    margin: 0 auto;
+                    display: block;
+                    font-size: rem(28px);
+                    &:first-child{
+                      color: #666;
+                    }
+                    &:nth-child(2){
+                      color: #555;
+                    }
+                    &:nth-child(3){
+                      color: #555;
+                      .appointment{
+                        color: #00cca3;
+                        display: block;
+                        line-height: 1.5
+                      }
+                    }
+                  }
+
+              }
+              & > button.current, & > button.current span{
+                color: #333;
+                font-size: rem(28px);
+              }
+            }
+            // .wrapper > button.current, .wrapper > button.current span {
+            //     color: #333;
+            //     font-size: rem(28px);
+            // }
+            .wrapper > button.current{
+              border-radius: rem(8px);
+              border: rem(2px) solid #00cca3;
+            }
+          }
+          .cal {
+            flex: 0 0 rem(120px);
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 rem(112px);
+            border-left: 1px solid #e6e6e6;
+            color: #555;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            font-size: rem(28px);
+            span {
+              display: block;
+              width:rem(56px);
+              overflow: hidden;
+              margin-left: rem(28px);
+              text-align: center;
+            }
+            img {
+              display: block;
+              margin-left: rem(44px);
+            }
+          }
+        }
+      }
+      // 内容区样式
+      .doctor-info{
+        ul li{
+          padding: 5px 0px;
+          span{
+            background-color: #999;
+            margin-right: 5px;
+            padding: 2px;
+            border-radius: 2px;
+          }
+        }
+      }
+    }
+  }
+}

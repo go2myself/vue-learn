@@ -1,7 +1,0 @@
-{
-  // 最初，为了让开发者能够尽早用上新的JS特性，babel团队开发了babel-preset-latest。这个preset比较特殊，它是多个preset的集合(es2015+)，并且随着ECMA规范的更新更增加它的内容。
-  "presets": ["env"],
-  "plugins": [
-    "transform-vue-jsx"
-  ]
-}
